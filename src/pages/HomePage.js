@@ -1,15 +1,20 @@
 import React from 'react';
-
+import { Helmet } from "react-helmet";
 import GameCard from '../components/GameCard/GameCard';
+import '../styles/Homepage.css';
 
 function HomePage() {
   return (
-    <div>
+    <>
+<Helmet>
+        <title> Home-Page</title>
+      </Helmet>
+      <div className="home-page">
+        <h1>Home Page</h1>
+        <GameCard />
+        </div>
 
-      <h1>Home Page</h1>
-      <GameCard />
-
-    </div>
+    </>
   );
 }
 

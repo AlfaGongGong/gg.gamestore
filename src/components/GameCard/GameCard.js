@@ -10,8 +10,9 @@ export default function MultiActionAreaCard() {
     <Card sx={{ maxWidth: 345 }}>
       <CardActionArea>
         <CardMedia
+          sx={{ borderRadius: 2, border: '1px solid black', height: '140px', width: '100%', objectFit: 'cover' }}
           component="img"
-          height="140"
+          height="140px"
           image="https://dev.me/assets/images/og-image-01.png"
           alt="green iguana"
         />
@@ -28,10 +29,10 @@ export default function MultiActionAreaCard() {
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <Button size="small" color="primary">
+        <Button size="small" color="primary" variant="outlined">
           More Info
         </Button>
-        <Button size="small" color="primary">
+        <Button size="small" color="primary" variant="contained">
           Buy
         </Button>
       </CardActions>
