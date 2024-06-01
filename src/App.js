@@ -1,20 +1,20 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
-import HomePage from './pages/HomePage.js';
-import AdminDashboard from './pages/AdminDashboard.js';
-import UserDashboard from './pages/UserDashboard.js';
-import NotFoundPage from './pages/NotFoundPage.js';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import HomePage from './pages/HomePage';
+import AdminDashboard from './pages/AdminDashboard';
+import UserDashboard from './pages/UserDashboard';
+import NotFoundPage from './pages/NotFoundPage';
 
 function App() {
   return (
     <Router>
-      <Switch>
+      <Routes>
         <Route exact path="/" component={HomePage} />
         <Route path="/user-dashboard" component={UserDashboard} />
         <Route path="/admin-dashboard" component={AdminDashboard} />
         <Route path="/404" component={NotFoundPage} />
-        <Redirect to="/404" />
-      </Switch>
+        <Route path='*' component={NotFoundPage} />
+      </Routes>
     </Router>
   );
 }
