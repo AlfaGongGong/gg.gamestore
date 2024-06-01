@@ -22,7 +22,25 @@
     "react-router-dom": "^6.23.1",
     "react-scripts": "5.0.1",
     "redux": "^5.0.1",
+    "sass": "^1.77.4",
+    "universal-cookie": "^7.1.4",
     "web-vitals": "^2.1.4"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.16.7",
+    "@babel/preset-env": "^7.16.7",
+    "@babel/plugin-proposal-private-property-in-object": "^7.16.7",
+    "@babel/preset-react": "^7.16.7",
+    "@testing-library/react-hooks": "^7.0.2",
+    "babel-loader": "^8.2.3",
+    "eslint": "^8.10.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.28.0",
+    "eslint-plugin-react-hooks": "^4.3.0",
+    "prettier": "^2.5.1"
   },
   "scripts": {
     "start": "react-scripts start",

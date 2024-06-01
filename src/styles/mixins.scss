@@ -1,0 +1,15 @@
+$mobile: 420px;
+$tablet: 768px;
+$desktop: 1100px;
+
+@mixin default {
+    max-width: 1100px;
+    padding: 18px 50px;
+    margin: 0 auto;
+}
+
+@mixin excludeDefault {
+    padding: 18px 30px;
+    margin: 0 auto;
+    max-width: none;
+}

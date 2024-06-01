@@ -1,0 +1,60 @@
+@import "../../styles/variables.scss", "../../styles/mixins.scss";
+
+#errors {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    text-align: center;
+
+    h1 {
+        color: $mainColor;
+        font-size: 4em;
+        line-height: 1em;
+        margin-bottom: 30px;
+    }
+
+    p {
+        text-align: center;
+        color: $mainColor;
+        font-size: 1.3em;
+        margin-bottom: 30px;
+    }
+
+    button {
+
+        padding: 10px 20px;
+        border-radius: 12px;
+        font-size: 1em;
+    }
+}
+
+@media screen and (max-width: $tablet) {
+    #error401 {
+        h1 {
+            font-size: 3em;
+        }
+
+        p {
+            font-size: 1.5em;
+        }
+    }
+}
+
+@media screen and (max-width: $mobile) {
+    #error401 {
+        h1 {
+            font-size: 2em;
+        }
+
+        p {
+            font-size: 1em;
+        }
+
+        button {
+            padding: 10px 15px;
+            font-size: 0.8em;
+        }
+    }
+}
