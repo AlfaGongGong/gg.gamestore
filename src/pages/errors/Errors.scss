@@ -2,31 +2,36 @@
 
 #errors {
     display: flex;
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
-    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    color: #fff;
     text-align: center;
+    background-color: #000;
+    font-family: 'Press Start 2P', cursive;
 
     h1 {
-        color: $mainColor;
-        font-size: 4em;
-        line-height: 1em;
-        margin-bottom: 30px;
+        font-size: 10rem;
     }
 
     p {
-        text-align: center;
-        color: $mainColor;
-        font-size: 1.3em;
-        margin-bottom: 30px;
+        font-size: 1.5rem;
     }
 
-    button {
+    &.error-404 {
+        background: url('./../../assets/images/404.jpg') no-repeat center center;
+        background-size: cover;
+    }
 
-        padding: 10px 20px;
-        border-radius: 12px;
-        font-size: 1em;
+    &.error-403 {
+        background: url('') no-repeat center center;
+        background-size: cover;
+    }
+
+    &.error-401 {
+        background: url('./../../assets/images/401.jpg') no-repeat center center;
+        background-size: cover;
     }
 }
 
