@@ -5,11 +5,12 @@ import ProtectedAuth from './auth/ProtectedAuth';
 
 
 import HomePage from './pages/HomePage.js';
-import AdminDashboard from './pages/AdminDashboard';
-import UserDashboard from './pages/UserDashboard';
+import AdminDashboard from './pages/AdminDashboard.js';
+import UserDashboard from './pages/UserDashboard.js';
 import Error404 from './pages/errors/Error401.js';
 import Error401 from './pages/errors/Error404.js';
 import Error403 from './pages/errors/Error403.js';
+
 
 
 import './App.css';

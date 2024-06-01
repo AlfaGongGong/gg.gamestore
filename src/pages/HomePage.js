@@ -1,20 +1,30 @@
 import React from 'react';
-import { Helmet } from "react-helmet";
-import GameCard from '../components/GameCard/GameCard';
+import GameCard from '../components/GameCard/GameCard.js';
+import fakeData from './../utils/fakeData.json';
+
+
+
+
 import '../styles/Homepage.css';
 
-function HomePage() {
-  return (
-    <>
-<Helmet>
-        <title> Home-Page</title>
-      </Helmet>
-      <div className="home-page">
-        <h1>Home Page</h1>
-        <GameCard />
-        </div>
 
-    </>
+
+function HomePage() {
+
+  const gameList = fakeData.items.map((item) => {
+    return (
+      <GameCard key={item.id} item={item} />
+    );
+  });
+  return (
+
+    <div className="home-page container">
+      <h1 className="page-title">Welcome to our store</h1>
+      <div className="row">
+        {gameList}
+      </div>
+    </div>
+
   );
 }
 
