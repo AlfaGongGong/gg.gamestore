@@ -1,0 +1,117 @@
+.product-card {
+  background: #000000;
+  border-radius: 0.625rem;
+  color: #0099ff;
+  overflow: hidden;
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+.product-card:hover {
+  -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
+          box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+
+.product-image {
+  width: 100%;
+  height: auto;
+}
+
+.product-name {
+  font-family: "Orbitron", sans-serif;
+  font-size: 1.2rem;
+}
+
+.product-info-container {
+  padding: 0.625rem;
+}
+.product-info-container .product-dates,
+.product-info-container .product-genre,
+.product-info-container .product-description,
+.product-info-container .product-rating {
+  font-family: "Raleway", sans-serif;
+  font-size: 1rem;
+  color: #0099ff;
+}
+.product-info-container .product-info {
+  font-family: "Raleway", sans-serif;
+  font-size: 1rem;
+  color: #0099ff;
+  text-align: center;
+}
+.product-info-container .product-price-sale {
+  font-family: "Raleway", sans-serif;
+  font-size: 1rem;
+  color: #ffff00;
+}
+.product-info-container .product-price-normal {
+  font-family: "Raleway", sans-serif;
+  font-size: 1.2rem;
+  color: grey;
+  text-decoration: line-through;
+}
+.product-info-container .product-buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  gap: 0.625rem;
+  width: 100%;
+  margin: 0.625rem;
+}
+
+.more-info {
+  background-color: transparent;
+  color: #ffff00;
+  font-family: "Press Start 2P", cursive;
+  padding: 0.625rem 1.25rem;
+  border: 1px solid #ff0066;
+  border-radius: 2;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  height: 1.5rem;
+}
+.more-info:hover {
+  background-color: #cc0052;
+  -webkit-transform: scale(1.5);
+          transform: scale(1.5);
+}
+
+.cart-btn {
+  background-color: #ff0066;
+  color: #ffff00;
+  font-family: "Press Start 2P", cursive;
+  padding: 0.625rem 1.25rem;
+  border: 1px solid #ff0066;
+  border-radius: 2;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  height: 1.5rem;
+}
+.cart-btn:hover {
+  background-color: #cc0052;
+  -webkit-transform: scale(1.5);
+          transform: scale(1.5);
+}

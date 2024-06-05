@@ -1,65 +1,36 @@
-@import "../../styles/variables.scss", "../../styles/mixins.scss";
+@import "../../styles/variables.scss";
 
 #errors {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    color: #fff;
-    text-align: center;
-    background-color: #000;
-    font-family: 'Press Start 2P', cursive;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  color: #fff;
+  text-align: center;
+  background-color: #000;
+  font-family: 'Press Start 2P', cursive;
 
-    h1 {
-        font-size: 10rem;
-    }
+  h1 {
+    font-size: 10rem;
+  }
 
-    p {
-        font-size: 1.5rem;
-    }
+  p {
+    font-size: 1.5rem;
+  }
 
-    &.error-404 {
-        background: url('./../../assets/images/404.jpg') no-repeat center center;
-        background-size: cover;
-    }
+  &.error-404 {
+    background: url('./../../assets/images/404.jpg') no-repeat center center;
+    background-size: cover;
+  }
 
-    &.error-403 {
-        background: url('') no-repeat center center;
-        background-size: cover;
-    }
+  &.error-403 {
+    background: url('') no-repeat center center;
+    background-size: cover;
+  }
 
-    &.error-401 {
-        background: url('./../../assets/images/401.jpg') no-repeat center center;
-        background-size: cover;
-    }
-}
-
-@media screen and (max-width: $tablet) {
-    #error401 {
-        h1 {
-            font-size: 3em;
-        }
-
-        p {
-            font-size: 1.5em;
-        }
-    }
-}
-
-@media screen and (max-width: $mobile) {
-    #error401 {
-        h1 {
-            font-size: 2em;
-        }
-
-        p {
-            font-size: 1em;
-        }
-
-        button {
-            padding: 10px 15px;
-            font-size: 0.8em;
-        }
-    }
+  &.error-401 {
+    background: url('./../../assets/images/401.jpg') no-repeat center center;
+    background-size: cover;
+  }
 }
