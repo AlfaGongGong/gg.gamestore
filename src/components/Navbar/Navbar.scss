@@ -1,0 +1,34 @@
+@import '../../styles/variables.scss';
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: $background;
+  box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+
+  .navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: $mainColor;
+    transition: color 0.1s ease-in-out;
+
+    &:hover {
+      color: $accentColor;
+      transform: scale(1.01);
+    }
+  }
+
+  .navbar-item {
+    color: $mainColor;
+    transition: color 0.1s ease-in-out;
+
+    &:hover {
+      color: $accentColor;
+      transform: scale(1.01);
+    }
+  }
+}

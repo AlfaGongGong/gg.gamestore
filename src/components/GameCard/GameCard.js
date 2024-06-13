@@ -1,15 +1,13 @@
-import React from 'react';
-import './GameCard.css';
-import getRandomLoremIpsumText from '../../utils/RandomLoremIpsum.js';
-
+import React from "react";
+import "./GameCard.css";
 const GameCard = ({ item }) => {
   const handleMoreInfo = (id) => {
     console.log(`More info for item with id: ${id}`);
-  }
+  };
 
   const handleBuy = (id) => {
     console.log(`Buying item with id: ${id}`);
-  }
+  };
 
   return (
     <div className="product-card col-md-3" key={item.id}>
@@ -20,11 +18,19 @@ const GameCard = ({ item }) => {
         <p className="product-price-normal">{item.normalPrice} KM</p>
         <p className="product-price-sale">Now: {item.salePrice} KM</p>
         <div className="product-buttons">
-          <button onClick={() => handleMoreInfo(item.id)} className="btn more-info" title="More Info">
+          <button
+            onClick={() => handleMoreInfo(item.id)}
+            className="btn more-info"
+            title="More Info"
+          >
             <i className="fas fa-info-circle"></i>
           </button>
 
-          <button onClick={() => handleBuy(item.id)} className="btn cart-btn" title="Buy">
+          <button
+            onClick={() => handleBuy(item.id)}
+            className="btn cart-btn"
+            title="Buy"
+          >
             <i className="fas fa-shopping-cart"></i>
           </button>
         </div>
