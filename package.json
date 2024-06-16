@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {
   "name": "gg.gamestore",
   "version": "0.1.0",
@@ -70,3 +71,87 @@
   },
   "webpack.config.js": "./webpack.config.js"
 }
+=======
+{
+  "name": "gg.gamestore",
+  "version": "0.1.0",
+  "private": true,
+  "type": "commonjs",
+  "dependencies": {
+    "@emotion/react": "^11.11.4",
+    "@fontsource/roboto": "^5.0.13",
+    "@testing-library/jest-dom": "^5.17.0",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "axios": "^1.7.2",
+    "browserify-zlib": "^0.2.0",
+    "buffer": "^6.0.3",
+    "crypto-browserify": "^3.12.0",
+<<<<<<< HEAD
+    "events": "^3.3.0",
+=======
+>>>>>>> 1a0e8a70e20dd0caaab108cd97413b29958a5d82
+    "express": "^4.19.2",
+    "fs": "^0.0.1-security",
+    "helmet": "^7.1.0",
+    "https-browserify": "^1.0.0",
+    "jsonwebtoken": "^9.0.2",
+    "mysql2": "^3.10.0",
+    "path-browserify": "^1.0.1",
+<<<<<<< HEAD
+    "process": "^0.11.10",
+    "querystring-es3": "^0.2.1",
+    "ra-data-json-server": "^4.16.17",
+=======
+    "querystring-es3": "^0.2.1",
+>>>>>>> 1a0e8a70e20dd0caaab108cd97413b29958a5d82
+    "react": "^18.3.1",
+    "react-admin": "^4.16.18",
+    "react-dom": "^18.3.1",
+    "react-helmet": "^6.1.0",
+    "react-router-dom": "^6.23.1",
+    "react-scripts": "5.0.1",
+    "redux": "^5.0.1",
+    "sass": "^1.77.4",
+    "stream-browserify": "^3.0.0",
+    "stream-http": "^3.2.0",
+<<<<<<< HEAD
+    "timers-browserify": "^2.0.12",
+=======
+>>>>>>> 1a0e8a70e20dd0caaab108cd97413b29958a5d82
+    "universal-cookie": "^7.1.4",
+    "url": "^0.11.3",
+    "util": "^0.12.5",
+    "web-vitals": "^2.1.4"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.16.7",
+    "@babel/plugin-proposal-private-property-in-object": "^7.16.7",
+    "@babel/preset-env": "^7.16.7",
+    "@babel/preset-react": "^7.16.7",
+    "@testing-library/react-hooks": "^7.0.2",
+    "babel-loader": "^8.2.3",
+    "eslint": "^8.10.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.28.0",
+    "eslint-plugin-react-hooks": "^4.3.0",
+    "prettier": "^2.5.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "webpack.config.js": "./webpack.config.js"
+}
+>>>>>>> 9f2e7b3f1117e87d2fd3ec5d332d554c588c1767

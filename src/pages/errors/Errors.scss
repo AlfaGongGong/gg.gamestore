@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @import "../../styles/variables.scss";
 
 #errors {
@@ -34,3 +35,49 @@
     background-size: cover;
   }
 }
+=======
+@import "../../styles/variables.scss";
+
+#errors {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  color: #fff;
+  text-align: center;
+  background-color: #000;
+  font-family: 'Press Start 2P', cursive;
+
+  h1 {
+    font-size: 10rem;
+  }
+
+  p {
+    font-size: 1.5rem;
+  }
+
+  &.error-404 {
+    background: url('./../../assets/images/404.jpg') no-repeat center center;
+    background-size: cover;
+  }
+
+  &.error-403 {
+<<<<<<< HEAD
+    background: url('./../../assets/images/401.jpg') no-repeat center center;
+=======
+    background: url('') no-repeat center center;
+>>>>>>> 1a0e8a70e20dd0caaab108cd97413b29958a5d82
+    background-size: cover;
+  }
+
+  &.error-401 {
+<<<<<<< HEAD
+    background: url('./../../assets/images/401.jpg') no-repeat center center;
+=======
+    background: url('') no-repeat center center;
+>>>>>>> 1a0e8a70e20dd0caaab108cd97413b29958a5d82
+    background-size: cover;
+  }
+}
+>>>>>>> 9f2e7b3f1117e87d2fd3ec5d332d554c588c1767
