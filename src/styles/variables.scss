@@ -1,0 +1,45 @@
+$mainColor: #0099ff;
+$highlightColor: #00ff00;
+$btnColor: #ff0066;
+$btnText: #ffff00;
+$accentColor: #ffff00;
+$background: #000000;
+
+
+$main: "Open Sans", sans-serif;
+$title: "Orbitron", sans-serif;
+$callToAction: "Press Start 2P", cursive;
+$secondary: "Raleway", sans-serif;
+
+
+$min-width: 200px;
+$max-width: 350px;
+$min-height: 250px;
+$max-height: 400px;
+
+
+$breakpoint-md: 768px;
+$breakpoint-lg: 1024px;
+
+
+@mixin respond-to($breakpoint) {
+  @if $breakpoint =='medium' {
+    @media (max-width: $breakpoint-md) {
+      @content;
+    }
+  }
+
+  @else if $breakpoint =='large' {
+    @media (max-width: $breakpoint-lg) {
+      @content;
+    }
+  }
+}
+
+@mixin card-shadow {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+@mixin transition($property, $duration, $timing) {
+  transition: $property $duration $timing;
+}

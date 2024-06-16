@@ -2,6 +2,7 @@
   "name": "gg.gamestore",
   "version": "0.1.0",
   "private": true,
+  "type": "commonjs",
   "dependencies": {
     "@emotion/react": "^11.11.4",
     "@fontsource/roboto": "^5.0.13",
@@ -12,6 +13,10 @@
     "browserify-zlib": "^0.2.0",
     "buffer": "^6.0.3",
     "crypto-browserify": "^3.12.0",
+<<<<<<< HEAD
+    "events": "^3.3.0",
+=======
+>>>>>>> 1a0e8a70e20dd0caaab108cd97413b29958a5d82
     "express": "^4.19.2",
     "fs": "^0.0.1-security",
     "helmet": "^7.1.0",
@@ -19,7 +24,13 @@
     "jsonwebtoken": "^9.0.2",
     "mysql2": "^3.10.0",
     "path-browserify": "^1.0.1",
+<<<<<<< HEAD
+    "process": "^0.11.10",
     "querystring-es3": "^0.2.1",
+    "ra-data-json-server": "^4.16.17",
+=======
+    "querystring-es3": "^0.2.1",
+>>>>>>> 1a0e8a70e20dd0caaab108cd97413b29958a5d82
     "react": "^18.3.1",
     "react-admin": "^4.16.18",
     "react-dom": "^18.3.1",
@@ -30,6 +41,10 @@
     "sass": "^1.77.4",
     "stream-browserify": "^3.0.0",
     "stream-http": "^3.2.0",
+<<<<<<< HEAD
+    "timers-browserify": "^2.0.12",
+=======
+>>>>>>> 1a0e8a70e20dd0caaab108cd97413b29958a5d82
     "universal-cookie": "^7.1.4",
     "url": "^0.11.3",
     "util": "^0.12.5",
@@ -63,16 +78,5 @@
       "react-app/jest"
     ]
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  }
+  "webpack.config.js": "./webpack.config.js"
 }

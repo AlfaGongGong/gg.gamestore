@@ -1,0 +1,18 @@
+{
+  "RAWG_API_KEY": "cc1acdacdcaa426a96cd4694386de9a4",
+  "RAWG_API_URL": "https://api.rawg.io/api",
+
+  "RAPIDAPI_KEY": "f6d1f840a3msh19d03ebda2bde72p14ca93jsn16413aedab2d",
+  "RAPIDAPI_HOST": "real-time-product-search.p.rapidapi.com",
+
+  "DB_CONFIG": {
+    "host": "localhost",
+    "user": "root",
+    "password": "root",
+    "database": "gg_database",
+    "port": 3306
+  },
+
+  "API_URL": "http://localhost:3000",
+  "PORT": 3000
+}
