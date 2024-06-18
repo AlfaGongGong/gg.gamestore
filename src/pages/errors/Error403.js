@@ -1,7 +1,9 @@
+import React from "react";
 import { Link } from "react-router-dom";
 
-import "./Errors.scss";
-function Error() {
+import "../../styles/Errors.scss";
+
+function Error403() {
   return (
     <main id="errors">
       <h1>Error 403 (Forbidden)</h1>

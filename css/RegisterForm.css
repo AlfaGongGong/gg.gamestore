@@ -1,0 +1,47 @@
+.register-form .register-form__title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+.register-form .register-form__form .register-form__form-group {
+  margin-bottom: 1rem;
+}
+.register-form .register-form__form .register-form__form-group .register-form__form-label {
+  display: block;
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+.register-form .register-form__form .register-form__form-group .register-form__form-input {
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  -webkit-transition: border-color 0.15s ease-in-out;
+  transition: border-color 0.15s ease-in-out;
+}
+.register-form .register-form__form .register-form__form-group .register-form__form-input:focus {
+  border-color: #0099ff;
+}
+.register-form .register-form__form .register-form__form-group .register-form__form-error {
+  color: #dc3545;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}
+.register-form .register-form__form .register-form__form-submit {
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #0099ff;
+  background-color: #fff;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  -webkit-transition: background-color 0.15s ease-in-out;
+  transition: background-color 0.15s ease-in-out;
+}
+.register-form .register-form__form .register-form__form-submit:hover {
+  background-color: #e6e6e6;
+}

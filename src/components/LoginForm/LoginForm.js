@@ -1,4 +1,8 @@
+import React from "react";
+import { Link } from "react-router-dom";
+
 import axios from "../../axios.js";
+import "./LoginForm.scss";
 
 const handleLogin = async (username, password) => {
   try {
@@ -10,7 +14,7 @@ const handleLogin = async (username, password) => {
     localStorage.setItem("token", response.data.token);
 
     // Redirect to the home page
-    window.location.href = "/";
+    <Link to="/home" />;
   } catch (error) {
     // Handle error
     console.error("Error logging in:", error);

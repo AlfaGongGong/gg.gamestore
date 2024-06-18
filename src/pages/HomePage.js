@@ -1,11 +1,30 @@
-import React from "react";
-import { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Navbar from "../components/Navbar/Navbar.js";
 import ProductSlider from "../components/ProductSlider/ProductSlider.js";
 import ProductCard from "../components/GameCard/GameCard.js";
+import axios from "../axios.js";
 import "../styles/Homepage.css";
+import GameCard from "../components/GameCard/GameCard.js";
 
 function HomePage() {
+  const [bestRatedGames, setBestRatedGames] = useState([]);
+
+  useEffect(() => {
+    const fetchBestRatedGames = async () => {
+      try {
+        const response = await axios.get("/games/best-rated");
+        setBestRatedGames(response.data);
+        const items = response.data;
+        const item = items[0];
+        return items.map((item) => <ProductCard key={item.id} item={item} />);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchBestRatedGames();
+  }, []);
+
   return (
     <>
       <div className="hero">
@@ -25,19 +44,10 @@ function HomePage() {
       </div>
       <div className="container">
         <h2>Best Rated Games</h2>
-        <div className="row">
-          {useEffect(() => {
-            const bestRatedGames = async () => {};
-          }, [])}
-          <div className="col-md-4">
-            <ProductCard />
-          </div>
-          <div className="col-md-4">
-            <ProductCard />
-          </div>
-          <div className="col-md-4">
-            <ProductCard />
-          </div>
+        <div className="row cards active">
+          {bestRatedGames.map((item, index) => (
+            <ProductCard key={index} item={item} />
+          ))}
         </div>
       </div>
     </>

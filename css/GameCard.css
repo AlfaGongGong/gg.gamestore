@@ -1,4 +1,4 @@
-.product-card {
+.card {
   background: #000000;
   border-radius: 0.625rem;
   color: #0099ff;
@@ -7,19 +7,30 @@
           box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 100%;
 }
-.product-card:hover {
+.card:hover {
   -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
           box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
   cursor: pointer;
 }
 
-.product-image {
+.card-image {
   width: 100%;
-  height: auto;
+  max-height: 250px;
 }
 
-.product-name {
+.card-name {
   font-family: "Orbitron", sans-serif;
   font-size: 1.2rem;
 }

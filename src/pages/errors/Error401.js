@@ -1,7 +1,9 @@
+import React from "react";
 import { Link } from "react-router-dom";
 
-import "./Errors.scss";
-function Error() {
+import "../../styles/Errors.scss";
+
+function Error401() {
   return (
     <main id="errors">
       <h1>Error 401 (Unauthorized)</h1>
@@ -9,7 +11,7 @@ function Error() {
         You are not authorized to view this page. Please log in to access this
         page.
       </p>
-      <Link to='/' replace >
+      <Link to="/" replace>
         <button>Back to Home</button>
       </Link>
     </main>

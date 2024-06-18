@@ -1,13 +1,17 @@
 @import '../../styles/variables.scss';
 
 
-.product-card {
+.card {
   background: $background;
   border-radius: 0.625rem;
   color: $mainColor;
   overflow: hidden;
   @include card-shadow;
   @include transition(all, 0.3s, ease-in-out);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
 
   &:hover {
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
@@ -15,12 +19,12 @@
   }
 }
 
-.product-image {
+.card-image {
   width: 100%;
-  height: auto;
+  max-height: 250px;
 }
 
-.product-name {
+.card-name {
   font-family: $title;
   font-size: 1.2rem;
 }

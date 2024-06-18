@@ -1,7 +1,9 @@
+import React from "react";
 import { Link } from "react-router-dom";
 
-import "./Errors.scss";
-function Error() {
+import "../../styles/Errors.scss";
+
+function Error404() {
   return (
     <main id="errors">
       <h1>Error 404 (Not Found)</h1>

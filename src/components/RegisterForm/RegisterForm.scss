@@ -1,0 +1,58 @@
+@import "../../styles/variables.scss";
+
+.register-form {
+  .register-form__title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+
+  .register-form__form {
+    .register-form__form-group {
+      margin-bottom: 1rem;
+
+      .register-form__form-label {
+        display: block;
+        font-size: 1rem;
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+      }
+
+      .register-form__form-input {
+        width: 100%;
+        padding: 0.5rem;
+        font-size: 1rem;
+        border: 1px solid #ced4da;
+        border-radius: 0.25rem;
+        transition: border-color 0.15s ease-in-out;
+
+        &:focus {
+          border-color: $mainColor;
+        }
+      }
+
+      .register-form__form-error {
+        color: #dc3545;
+        font-size: 0.875rem;
+        margin-top: 0.25rem;
+      }
+    }
+
+    .register-form__form-submit {
+      width: 100%;
+      padding: 0.75rem;
+      font-size: 1rem;
+      font-weight: 700;
+      color: $mainColor;
+      background-color: #fff;
+      border: none;
+      border-radius: 0.25rem;
+      cursor: pointer;
+      transition: background-color 0.15s ease-in-out;
+
+      &:hover {
+        background-color: darken(#fff, 10%);
+      }
+    }
+  }
+}

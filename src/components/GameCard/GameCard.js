@@ -1,39 +1,49 @@
 import React from "react";
-import "./GameCard.css";
+import { Link } from "react-router-dom";
+
+import "./GameCard.scss";
 const GameCard = ({ item }) => {
   const handleMoreInfo = (id) => {
-    console.log(`More info for item with id: ${id}`);
+    return (
+      <Link to={`/games/${id}`}>
+        <button>More info</button>
+      </Link>
+    );
   };
 
   const handleBuy = (id) => {
-    console.log(`Buying item with id: ${id}`);
+    return (
+      <Link to={`/games/${id}`}>
+        <button>Buy</button>
+      </Link>
+    );
   };
 
-  return (
-    <div className="product-card col-md-3" key={item.id}>
-      <img src={item.image} alt={item.title} className="product-image" />
-      <h2 className="product-name">{item.title}</h2>
-      <div className="product-info-container">
-        <p className="product-price-normal">{item.normalPrice} KM</p>
-        <p className="product-price-sale">Now: {item.salePrice} KM</p>
-        <div className="product-buttons">
-          <button
-            onClick={() => handleMoreInfo(item.id)}
-            className="btn more-info"
-            title="More Info"
-          >
-            <i className="fas fa-info-circle"></i>
-          </button>
+  const randomPrice = Math.floor(Math.random() * (200 - 50 + 1) + 50);
 
-          <button
-            onClick={() => handleBuy(item.id)}
-            className="btn cart-btn"
-            title="Buy"
-          >
-            <i className="fas fa-shopping-cart"></i>
-          </button>
-        </div>
+  return (
+    <div className="card col-md-3" key={item.id}>
+      <img src={item.background_image} alt={item.name} className="card-image" />
+      <div className="card-info-container">
+        <h2 className="card-name">{item.name}</h2>
+        <p className="card-price-normal"> ${randomPrice} KM</p>
+        <p className="card-price-sale"></p>
       </div>
+      <button
+        onClick={() => handleMoreInfo(item.id)}
+        className="card-btn more-info"
+        title="More Info"
+      >
+        <i className="fas fa-info-circle"></i>
+      </button>
+
+      <button
+        onClick={() => handleBuy(item.id)}
+        className="product-btn cart-btn"
+        title="Buy"
+      >
+        <i className="fas fa-shopping-cart"></i>
+      </button>
     </div>
   );
 };

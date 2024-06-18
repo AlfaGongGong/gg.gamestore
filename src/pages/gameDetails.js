@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import mysql from "mysql2/promise";
+import axios from "../axios.js";
 import { useParams } from "react-router-dom";
 
 function GameDetails() {
@@ -8,21 +8,19 @@ function GameDetails() {
 
   useEffect(() => {
     const fetchGame = async () => {
-      const connection = await mysql.createConnection({
-        host: process.env.DB_HOST,
-        user: process.env.DB_USER,
-        password: process.env.DB_PASS,
-        database: process.env.DB_NAME,
-      });
-
-      const [rows] = await connection.execute(
-        `SELECT * FROM games WHERE id = ${id}`
-      );
-
-      setGame(rows[0]);
+      try {
+        const response = await axios.get(`/games/${id}`);
+        setGame(response.data);
+      } catch (error) {
+        console.error("Error fetching game:", error);
+      }
     };
 
     fetchGame();
+
+    return () => {
+      setGame({});
+    };
   }, [id]);
 
   return (

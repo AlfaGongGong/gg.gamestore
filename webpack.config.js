@@ -33,11 +33,6 @@ export default {
           },
         },
       },
-      {
-        test: /\.css$/,
-        use: ["style-loader", "css-loader"],
-      },
-      // Add other rules as needed
     ],
   },
   target: "web",
@@ -45,24 +40,5 @@ export default {
   devServer: {
     static: "./dist",
     hot: true,
-  },
-  plugins: [
-    new webpack.HotModuleReplacementPlugin(),
-    // Add other plugins as needed
-  ],
-  watchOptions: {
-    ignored: /node_modules/,
-  },
-  stats: {
-    colors: true,
-  },
-  performance: {
-    hints: false,
-  },
-  optimization: {
-    minimize: false, // Set to true for production builds
-  },
-  externals: {
-    express: "commonjs express", // Only if you're using express in the backend
   },
 };

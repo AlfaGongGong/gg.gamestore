@@ -1,17 +1,19 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import Navbar from "../components/Navbar/Navbar.js";
-
+import { useParams } from "react-router-dom";
+import axios from "../axios.js";
 const GamesList = () => {
   const [games, setGames] = useState([]);
-
   useEffect(() => {
     const fetchGames = async () => {
-      const response = await fetch("/api/games");
-      const data = await response.json();
-      setGames(data);
+      try {
+        const response = await axios.get("/games");
+        setGames(response.data);
+      } catch (error) {
+        console.error("Error fetching games:", error);
+      }
     };
-
     fetchGames();
   }, []);
 

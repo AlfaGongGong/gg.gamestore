@@ -1,42 +1,33 @@
 import React, { useState, useEffect } from "react";
-import axios from "../../axios.js";
+import axios from "axios";
 import config from "../../config.json";
 import "./ProductSlider.scss";
 
 const ProductSlider = () => {
   const [items, setItem] = useState([]);
+  const { RAWG_API_URL, RAWG_API_KEY } = config;
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `/games?key=${config.RAWG_API_KEY}&platforms=1&ordering=-ratings`
+          `${RAWG_API_URL}/games?key=${RAWG_API_KEY}`
         );
         setItem(response.data.results.slice(0, 5));
 
-        // Store data in localStorage as a fallback
-        localStorage.setItem(
-          "items",
-          JSON.stringify(response.data.results.slice(0, 5))
-        );
+        const items = response.data.results.slice(0, 5);
+        localStorage.setItem("items", JSON.stringify(items));
       } catch (error) {
-        console.error("Error fetching popular items:", error);
-
-        // If there's an error (e.g., third-party cookies are blocked), try to get data from localStorage
-        const fallbackData = localStorage.getItem("items");
-        if (fallbackData) {
-          setItem(JSON.parse(fallbackData));
-        }
+        console.error(error);
       }
     };
-    fetchData();
-  }, []);
 
-  // Clear local storage on unmount and window change to prevent stale data
-  useEffect(() => {
-    return () => {
-      localStorage.removeItem("items");
-    };
+    const cachedItems = JSON.parse(localStorage.getItem("items"));
+    if (cachedItems) {
+      setItem(cachedItems);
+    } else {
+      fetchData();
+    }
   }, []);
 
   useEffect(() => {

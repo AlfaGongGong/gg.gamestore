@@ -1,3 +1,6 @@
+import React from "react";
+import "./RegisterForm.scss";
+
 import axios from "../../axios.js";
 
 const handleRegister = async (username, password) => {

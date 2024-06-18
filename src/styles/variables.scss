@@ -21,6 +21,39 @@ $max-height: 400px;
 $breakpoint-md: 768px;
 $breakpoint-lg: 1024px;
 
+$card-border-radius: 0.625rem;
+$card-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+$card-hover-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
+$card-max-width: 300px;
+$card-info-padding: 1rem;
+$card-info-font-size: 1rem;
+$card-info-line-height: 1.5;
+$card-info-font-weight: 400;
+$card-info-text-align: left;
+$card-info-color: #fff;
+$card-info-background-color: #000000;
+$card-background: #00000097;
+
+$btn-padding: 0.625rem 1.25rem;
+$btn-border-radius: 0.25rem;
+$btn-height: 1.5rem;
+$btn-font-size: 1rem;
+$btn-font-weight: 400;
+$btn-line-height: 1.5;
+$btn-text-align: center;
+$btn-color: #fff;
+$btn-background-color: #ff0066;
+$btn-border-color: #ff0066;
+$btn-hover-color: #cc0052;
+
+
+@mixin flex($direction, $justify, $align) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
 
 @mixin respond-to($breakpoint) {
   @if $breakpoint =='medium' {
