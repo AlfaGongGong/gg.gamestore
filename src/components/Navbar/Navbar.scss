@@ -1,25 +1,40 @@
+.navbar // Navbar.scss
+
 .navbar {
+  background-color: #1a1a1a;
+  color: #fff;
+  padding: 16px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #333;
-  color: #fff;
-  padding: 1rem;
 
   ul {
-    list-style: none;
+    list-style-type: none;
     display: flex;
-    align-items: center;
+    gap: 16px;
 
     li {
-      margin-right: 1rem;
+      a {
+        text-decoration: none;
+        color: #fff;
+        transition: color 0.3s;
+
+        &:hover {
+          color: #007bff; /* Gaming-themed color */
+        }
+      }
 
       button {
-        background: none;
-        border: none;
+        background-color: #007bff;
         color: #fff;
+        border: none;
+        padding: 8px 16px;
         cursor: pointer;
-        font-size: 1rem;
+        transition: background-color 0.3s;
+
+        &:hover {
+          background-color: #0056b3; /* Darker shade on hover */
+        }
       }
     }
   }
@@ -27,29 +42,52 @@
   .search-container {
     position: relative;
 
-    input[type="text"] {
-      padding: 0.5rem;
-      border: 2px solid #fff;
-      border-radius: 5px;
-      color: #333;
-      font-size: 1rem;
+    input {
+      background-color: transparent;
+      border: none;
+      border-bottom: 1px solid #fff;
+      color: #fff;
+      padding: 8px;
       width: 200px;
+      transition: border-color 0.3s;
+
+      &:focus {
+        outline: none;
+        border-color: #007bff;
+      }
     }
 
     .search-results {
       position: absolute;
       top: 100%;
       left: 0;
+      background-color: #1a1a1a;
+      border: 1px solid #fff;
       width: 100%;
-      background-color: #fff;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      border-radius: 5px;
-      padding: 1rem;
-      display: none; // Hide by default
+      padding: 8px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
 
-      img {
-        max-width: 100px;
-        margin-right: 1rem;
+      .search-item {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+
+        img {
+          max-width: 40px;
+          height: auto;
+        }
+
+        p {
+          font-size: 0.9rem;
+          color: #ccc; /* Subdued text color */
+        }
+
+        span {
+          font-weight: bold;
+          color: #fff;
+        }
       }
     }
   }

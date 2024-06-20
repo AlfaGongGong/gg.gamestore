@@ -1,3 +1,5 @@
+// Navbar.jsx
+
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "../../axios.js";
@@ -39,10 +41,6 @@ const Navbar = () => {
       .catch((error) => {
         console.error(error);
       });
-
-    console.log(searchInput);
-
-    console.log(searchResults);
   };
 
   return (
@@ -67,7 +65,11 @@ const Navbar = () => {
           {searchResults.length > 0 && (
             <div className="search-results">
               {searchResults.map((result) => (
-                <img key={result.id} src={result.image} alt={result.name} />
+                <div key={result.id} className="search-item">
+                  <img src={result.image} alt={result.name} />
+                  <p>{result.name}</p>
+                  <span>${result.price}</span>
+                </div>
               ))}
             </div>
           )}
