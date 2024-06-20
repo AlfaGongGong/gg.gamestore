@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import Navbar from "../components/Navbar/Navbar.js";
 import ProductSlider from "../components/ProductSlider/ProductSlider.js";
-import ProductCard from "../components/GameCard/GameCard.js";
+import ProductCard from "../components/ProductCard/ProductCard.js";
 import axios from "../axios.js";
 import "../styles/Homepage.css";
-import GameCard from "../components/GameCard/GameCard.js";
+import GameCard from "../components/ProductCard/ProductCard.js";
 
 function HomePage() {
   const [bestRatedGames, setBestRatedGames] = useState([]);

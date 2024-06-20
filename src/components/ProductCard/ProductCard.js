@@ -1,7 +1,5 @@
-
-
-import React from 'react';
-import './ProductCard.scss'; // You can create a separate SCSS file for styling
+import React from "react";
+import "./ProductCard.scss"; // You can create a separate SCSS file for styling
 
 const ProductCard = ({ product }) => {
   return (

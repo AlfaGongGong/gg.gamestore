@@ -20,7 +20,8 @@
         transition: color 0.3s;
 
         &:hover {
-          color: #007bff; /* Gaming-themed color */
+          color: #007bff;
+          /* Gaming-themed color */
         }
       }
 
@@ -33,7 +34,8 @@
         transition: background-color 0.3s;
 
         &:hover {
-          background-color: #0056b3; /* Darker shade on hover */
+          background-color: #0056b3;
+          /* Darker shade on hover */
         }
       }
     }
@@ -81,7 +83,8 @@
 
         p {
           font-size: 0.9rem;
-          color: #ccc; /* Subdued text color */
+          color: #ccc;
+          /* Subdued text color */
         }
 
         span {
