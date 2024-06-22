@@ -9,13 +9,13 @@ const ProductSlider = () => {
 
   const [items, setItems] = useState([]);
   const [activeSlide, setActiveSlide] = useState(null);
-  const { RAWG_API_URL, RAWG_API_KEY } = config;
+  const { RAWG_API_URL } = config;
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await Axios.get(
-          `${RAWG_API_URL}/games?key=${RAWG_API_KEY}&ordering=rating`
+          `https://api.rawg.io/api/games?key=${RAWG_API_KEY}&ordering=rating`
         );
         const topItems = response.data.results.slice(0, 5);
         setItems(topItems);

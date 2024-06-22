@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import axios from "axios"; // Modified Axios to axios to match the common usage
+import Axios from "axios"; // Modified Axios to axios to match the common usage
 import { useParams } from "react-router-dom";
 import config from "../config.json";
 import "./GameDetails.scss";
@@ -14,10 +14,10 @@ function GameDetails() {
   useEffect(() => {
     const fetchGame = async () => {
       try {
-        const response = await axios.get(
+        const response = await Axios.get(
           `https://api.rawg.io/api/games/${id}?key=${RAWG_API_KEY}`
         );
-        setGame(response.data); // Removed .results[0] as it's incorrect based on RAWG API documentation
+        setGame(response.data);
       } catch (error) {
         console.error("Error fetching game:", error);
       }
@@ -75,11 +75,23 @@ function GameDetails() {
   }
 
   const renderScreenshots = () => {
-    return screenshots.map((screenshot) => (
-      <li key={screenshot.id}>
-        <img src={screenshot.image} alt="screenshot" />
-      </li>
-    ));
+    if (!Array.isArray(screenshots) || screenshots.length === 0) {
+      return <li>No screenshots available</li>;
+    }
+
+    return screenshots.map((screenshot) => {
+      if (screenshot && screenshot.image) {
+        return (
+          <li key={screenshot.id}>
+            <img src={screenshot.image} alt="screenshot" />
+          </li>
+        );
+      } else {
+        return (
+          <li key={`missing-${Math.random()}`}>Screenshot not available</li>
+        );
+      }
+    });
   };
 
   return (
@@ -96,25 +108,19 @@ function GameDetails() {
           <p>Rating: {game.rating}</p>
           <p>Released: {game.released}</p>
           <p>Developed by: {game.developers?.[0]?.name}</p>{" "}
-          {/* Added optional chaining */}
           <p>Released by: {game.publishers?.[0]?.name}</p>{" "}
-          {/* Added optional chaining */}
-          <p>Tags: {game.tags?.map((tag) => tag.name).join(", ")}</p>{" "}
-          {/* Added optional chaining */}
           <p>
             Website: <a href={game.website}>{game.website}</a>
           </p>
           <p>Metacritic: {game.metacritic}</p>
-          <p>
-            Metacritic URL:{" "}
-            <a href={game.metacritic_url}>{game.metacritic_url}</a>
-          </p>
         </div>
       </div>
       <div className="row">
         <div className="col-md-12 game-platforms">
-          <h2>Platforms</h2>
-          <ul>{renderPlatforms(game.platforms)}</ul>
+          <h2>Available for</h2>
+          <ul>
+            <li>{renderPlatforms(game.parent_platforms)}</li>
+          </ul>
         </div>
       </div>
       <div className="row">
@@ -126,7 +132,9 @@ function GameDetails() {
       <div className="row">
         <div className="col-md-12 game-screenshots">
           <h2>Screenshots</h2>
-          <ul>{renderScreenshots()}</ul>
+          <ul>
+            <li>{renderScreenshots(game.screenshots)}</li>
+          </ul>
         </div>
       </div>
     </div>
