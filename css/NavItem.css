@@ -1,0 +1,10 @@
+.nav-item:hover .nav-link {
+  text-decoration: none;
+  color: #ff4500;
+}
+.nav-item .nav-link {
+  display: block;
+  padding: 10px 15px;
+  color: #d13800;
+  text-decoration: none;
+}

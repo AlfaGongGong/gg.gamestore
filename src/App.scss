@@ -75,19 +75,3 @@ body {
 
   }
 }
-
-@include respond-to('medium') {
-  body {
-    font-size: 14px;
-  }
-
-  .container {
-    padding: 0 10px;
-  }
-}
-
-@include respond-to('large') {
-  body {
-    font-size: 16px;
-  }
-}

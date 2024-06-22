@@ -7,19 +7,15 @@ import "./LoginForm.scss";
 const handleLogin = async (username, password) => {
   try {
     const response = await axios.post("/auth/login", { username, password });
-    // Handle successful login
+
     console.log("Logged in successfully:", response.data);
 
-    // Save the token to local storage
     localStorage.setItem("token", response.data.token);
 
-    // Redirect to the home page
     <Link to="/home" />;
   } catch (error) {
-    // Handle error
     console.error("Error logging in:", error);
 
-    // Display error message
     const errorMessage = document.createElement("p");
     errorMessage.textContent = "Invalid credentials. Please try again.";
     errorMessage.style.color = "red";

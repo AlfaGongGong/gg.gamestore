@@ -1,22 +1,21 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import config from "../../config.json";
-import "./ProductSlider.scss";
+import styles from "./ProductSlider.scss";
 
 const ProductSlider = () => {
-  const [items, setItem] = useState([]);
-  const { RAWG_API_URL, RAWG_API_KEY } = config;
+  const [items, setItems] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `${RAWG_API_URL}/games?key=${RAWG_API_KEY}`
+          `${process.env.REACT_APP_RAWG_API_URL}/games?key=${process.env.REACT_APP_RAWG_API_KEY}`
         );
-        setItem(response.data.results.slice(0, 5));
-
-        const items = response.data.results.slice(0, 5);
-        localStorage.setItem("items", JSON.stringify(items));
+        setItems(response.data.results.slice(0, 5));
+        localStorage.setItem(
+          "items",
+          JSON.stringify(response.data.results.slice(0, 5))
+        );
       } catch (error) {
         console.error(error);
       }
@@ -24,27 +23,27 @@ const ProductSlider = () => {
 
     const cachedItems = JSON.parse(localStorage.getItem("items"));
     if (cachedItems) {
-      setItem(cachedItems);
+      setItems(cachedItems);
     } else {
       fetchData();
     }
   }, []);
 
   useEffect(() => {
-    const sliderPluggin = (activeSlide = 0) => {
-      const slides = document.querySelectorAll(".slide");
+    const sliderPlugin = (activeSlide = 0) => {
+      const slides = document.querySelectorAll(`.${styles.slide}`);
       let currentSlideIndex = activeSlide;
 
-      slides[currentSlideIndex]?.classList.add("active");
+      slides[currentSlideIndex]?.classList.add(styles.active);
 
       function toggleActiveSlide() {
         clearActiveClasses();
-        this.classList.add("active");
+        this.classList.add(styles.active);
       }
 
       function clearActiveClasses() {
         slides.forEach((slide) => {
-          slide.classList.remove("active");
+          slide.classList.remove(styles.active);
         });
       }
 
@@ -52,19 +51,21 @@ const ProductSlider = () => {
         slide.addEventListener("click", toggleActiveSlide);
       });
     };
-    sliderPluggin();
+    sliderPlugin();
   });
 
   return items.length > 0 ? (
-    items.map((item) => (
-      <div
-        className="slide"
-        style={{ backgroundImage: `url(${item.background_image})` }}
-        key={item.id}
-      >
-        <h3>{item.name}</h3>
-      </div>
-    ))
+    <div className={styles.sliderContainer}>
+      {items.map((item) => (
+        <div
+          className={styles.slide}
+          key={item.id}
+          style={{ backgroundImage: `url(${item.background_image})` }}
+        >
+          <h3>{item.name}</h3>
+        </div>
+      ))}
+    </div>
   ) : (
     <p>Loading...</p>
   );

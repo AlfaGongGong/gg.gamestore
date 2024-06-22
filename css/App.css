@@ -6,7 +6,7 @@ html {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   font-family: "Open Sans", sans-serif;
-  color: #0099ff;
+  color: #ff4500;
   transition: all 0.2s;
   -webkit-transition: all 0.2s;
   -moz-transition: all 0.2s;
@@ -26,7 +26,7 @@ body {
   padding: 0;
   margin: 0;
   font-family: "Open Sans", sans-serif;
-  color: #0099ff;
+  color: #ff4500;
   transition: all 0.2s;
   -webkit-transition: all 0.2s;
   -moz-transition: all 0.2s;
@@ -102,18 +102,4 @@ body #root .col {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-}
-
-@media (max-width: 768px) {
-  body {
-    font-size: 14px;
-  }
-  .container {
-    padding: 0 10px;
-  }
-}
-@media (max-width: 1024px) {
-  body {
-    font-size: 16px;
-  }
 }

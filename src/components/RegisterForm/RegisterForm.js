@@ -1,62 +1,68 @@
-import React from "react";
+import React, { useState } from "react";
 import "./RegisterForm.scss";
 
 import axios from "../../axios.js";
 
-const handleRegister = async (username, password) => {
-  try {
-    const response = await axios.post("/auth/register", { username, password });
-    // Handle successful registration
-    console.log("Registered successfully:", response.data);
+const RegisterForm = () => {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
 
-    // Save the token to local storage
-    localStorage.setItem("token", response.data.token);
+  const handleRegister = async () => {
+    try {
+      const response = await axios.post("/auth/register", {
+        username,
+        password,
+      });
 
-    // Redirect to the home page
-    window.location.href = "/";
-  } catch (error) {
-    // Handle error
-    console.error("Error registering:", error);
+      console.log("Registered successfully:", response.data);
 
-    // Display error message
-    const errorMessage = document.createElement("p");
-    errorMessage.textContent = "Registration failed. Please try again.";
-    errorMessage.style.color = "red";
-    document.getElementById("register-form").appendChild(errorMessage);
-  }
+      localStorage.setItem("token", response.data.token);
+
+      window.location.href = "/";
+    } catch (error) {
+      console.error("Error registering:", error);
+
+      const errorMessage = document.createElement("p");
+      errorMessage.textContent = "Registration failed. Please try again.";
+      errorMessage.style.color = "red";
+      document.getElementById("register-form").appendChild(errorMessage);
+    }
+  };
+
+  return (
+    <form
+      id="register-form"
+      className="dropdown-item"
+      method="POST"
+      onSubmit={(event) => {
+        event.preventDefault();
+        handleRegister();
+      }}
+    >
+      <h2>Register</h2>
+      <input
+        type="text"
+        placeholder="Username"
+        id="register-username"
+        name="username"
+        value={username}
+        onChange={(event) => setUsername(event.target.value)}
+        required
+      />
+      <input
+        type="password"
+        placeholder="Password"
+        id="register-password"
+        name="password"
+        value={password}
+        onChange={(event) => setPassword(event.target.value)}
+        required
+      />
+      <button type="submit" className="btn cta-btn" id="register-btn">
+        Register
+      </button>
+    </form>
+  );
 };
-
-const RegisterForm = () => (
-  <form
-    id="register-form"
-    className="dropdown-item"
-    method="POST"
-    onSubmit={(event) => {
-      event.preventDefault();
-      const username = document.getElementById("register-username").value;
-      const password = document.getElementById("register-password").value;
-      handleRegister(username, password);
-    }}
-  >
-    <h2>Register</h2>
-    <input
-      type="text"
-      placeholder="Username"
-      id="register-username"
-      name="username"
-      required
-    />
-    <input
-      type="password"
-      placeholder="Password"
-      id="register-password"
-      name="password"
-      required
-    />
-    <button type="submit" className="btn cta-btn" id="register-btn">
-      Register
-    </button>
-  </form>
-);
 
 export default RegisterForm;

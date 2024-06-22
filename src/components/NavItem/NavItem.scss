@@ -1,0 +1,17 @@
+@import "../../styles/variables.scss";
+
+.nav-item {
+  &:hover {
+    .nav-link {
+      text-decoration: none;
+      color: $primary-color;
+    }
+  }
+
+  .nav-link {
+    display: block;
+    padding: 10px 15px;
+    color: $secondary-color;
+    text-decoration: none;
+  }
+}

@@ -1,100 +1,87 @@
-.navbar .navbar {
-  background-color: #1a1a1a;
+.navbar {
+  background-color: #000;
   color: #fff;
-  padding: 16px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  padding: 10px;
 }
-.navbar .navbar ul {
+
+.navbar ul {
   list-style-type: none;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  gap: 16px;
 }
-.navbar .navbar ul li a {
-  text-decoration: none;
-  color: #fff;
-  -webkit-transition: color 0.3s;
-  transition: color 0.3s;
+
+.navbar li {
+  margin-right: 20px;
 }
-.navbar .navbar ul li a:hover {
-  color: #007bff;
-  /* Gaming-themed color */
-}
-.navbar .navbar ul li button {
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  padding: 8px 16px;
-  cursor: pointer;
-  -webkit-transition: background-color 0.3s;
-  transition: background-color 0.3s;
-}
-.navbar .navbar ul li button:hover {
-  background-color: #0056b3;
-  /* Darker shade on hover */
-}
-.navbar .navbar .search-container {
+
+.navbar .search-container {
   position: relative;
 }
-.navbar .navbar .search-container input {
-  background-color: transparent;
-  border: none;
-  border-bottom: 1px solid #fff;
-  color: #fff;
-  padding: 8px;
-  width: 200px;
-  -webkit-transition: border-color 0.3s;
-  transition: border-color 0.3s;
+
+.navbar input {
+  padding: 5px;
+  margin-right: 10px;
+  border: 1px solid #ff4500;
 }
-.navbar .navbar .search-container input:focus {
-  outline: none;
-  border-color: #007bff;
-}
-.navbar .navbar .search-container .search-results {
+
+.navbar .search-results {
   position: absolute;
   top: 100%;
   left: 0;
-  background-color: #1a1a1a;
-  border: 1px solid #fff;
-  width: 100%;
-  padding: 8px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  gap: 8px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 10px;
 }
-.navbar .navbar .search-container .search-results .search-item {
+
+.navbar .search-item {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  gap: 8px;
+  margin-top: 10px;
 }
-.navbar .navbar .search-container .search-results .search-item img {
-  max-width: 40px;
-  height: auto;
+
+.navbar img {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
 }
-.navbar .navbar .search-container .search-results .search-item p {
-  font-size: 0.9rem;
-  color: #ccc;
-  /* Subdued text color */
-}
-.navbar .navbar .search-container .search-results .search-item span {
-  font-weight: bold;
+
+.navbar button {
+  background-color: #ff4500;
   color: #fff;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  -webkit-transition: background-color 0.3s;
+  transition: background-color 0.3s;
+}
+.navbar button:hover {
+  background-color: #d13800;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .navbar ul {
+    margin-top: 10px;
+  }
+  .navbar li {
+    margin-right: 0;
+  }
+}
+@media (max-width: 480px) {
+  .navbar {
+    padding: 5px;
+  }
+  .navbar input {
+    padding: 3px;
+  }
 }

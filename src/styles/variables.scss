@@ -1,78 +1,89 @@
-$mainColor: #0099ff;
-$highlightColor: #00ff00;
-$btnColor: #ff0066;
-$btnText: #ffff00;
-$accentColor: #ffff00;
-$background: #000000;
+// Gaming Theme Variables
+$primary-color: #ff4500;
+$secondary-color: #d13800;
+$text-color: #666;
+$background-color: #000;
+$accent-color: #ffd700;
+$mainColor: $primary-color;
+
+// Font styles
+$heading-font: 'Roboto', sans-serif;
+$body-font: 'Open Sans', sans-serif;
+$base-font-size: 16px;
+$main: $body-font;
+
+// Heading styles
+$heading-font-size: 2.5rem;
+$heading-line-height: 1.2;
+
+// Body styles
+$body-font-size: 1rem;
+$body-line-height: 1.5;
+
+// Link styles
+$link-color: $primary-color;
+$link-hover-color: $secondary-color;
 
 
-$main: "Open Sans", sans-serif;
-$title: "Orbitron", sans-serif;
-$callToAction: "Press Start 2P", cursive;
-$secondary: "Raleway", sans-serif;
+// Button styles
+$button-bg-color: $primary-color;
+$button-text-color: #fff;
+$button-hover-color: $secondary-color;
+$button-border-radius: 4px;
+
+// Input styles
+$input-border-color: $primary-color;
+$input-focus-border-color: $secondary-color;
+
+// Navbar styles
+$navbar-bg-color: $background-color;
+$navbar-text-color: #fff;
+$navbar-hover-color: $accent-color;
+
+// Search styles
+$search-border-color: $primary-color;
+$search-focus-border-color: $secondary-color;
+
+// Search results styles
+$search-results-bg-color: $background-color;
+$search-results-text-color: #fff;
+$search-results-hover-color: $accent-color;
+
+$error-color: red;
+
+// Footer styles
+$footer-bg-color: $background-color;
+$footer-text-color: #fff;
+
+// Product card styles
+$product-card-padding: 20px;
+$product-card-border: 1px solid #ccc;
+$product-card-border-radius: 4px;
+$product-card-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+$price-font-size: 1.2rem;
+// Product image styles
+$product-image-margin-right: 20px;
+$product-image-border-radius: 4px;
+
+// Product details styles
+$product-details-margin-top: 10px;
+
+// Product price styles
+$product-price-color: $primary-color;
+
+// Add to cart button styles
+$add-to-cart-btn-bg-color: $primary-color;
+$add-to-cart-btn-text-color: #fff;
+$add-to-cart-btn-hover-color: $secondary-color;
+
+// Cart item styles
+$cart-item-border: 1px solid #ccc;
+$cart-item-border-radius: 4px;
+$cart-item-padding: 10px;
 
 
-$min-width: 200px;
-$max-width: 350px;
-$min-height: 250px;
-$max-height: 400px;
 
-
-$breakpoint-md: 768px;
-$breakpoint-lg: 1024px;
-
-$card-border-radius: 0.625rem;
-$card-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-$card-hover-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
-$card-max-width: 300px;
-$card-info-padding: 1rem;
-$card-info-font-size: 1rem;
-$card-info-line-height: 1.5;
-$card-info-font-weight: 400;
-$card-info-text-align: left;
-$card-info-color: #fff;
-$card-info-background-color: #000000;
-$card-background: #00000097;
-
-$btn-padding: 0.625rem 1.25rem;
-$btn-border-radius: 0.25rem;
-$btn-height: 1.5rem;
-$btn-font-size: 1rem;
-$btn-font-weight: 400;
-$btn-line-height: 1.5;
-$btn-text-align: center;
-$btn-color: #fff;
-$btn-background-color: #ff0066;
-$btn-border-color: #ff0066;
-$btn-hover-color: #cc0052;
-
-
-@mixin flex($direction, $justify, $align) {
-  display: flex;
-  flex-direction: $direction;
-  justify-content: $justify;
-  align-items: $align;
-}
-
-
-@mixin respond-to($breakpoint) {
-  @if $breakpoint =='medium' {
-    @media (max-width: $breakpoint-md) {
-      @content;
-    }
-  }
-
-  @else if $breakpoint =='large' {
-    @media (max-width: $breakpoint-lg) {
-      @content;
-    }
-  }
-}
-
-@mixin card-shadow {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-}
-
-@mixin transition($property, $duration, $timing) {
-  transition: $property $duration $timing;
-}
+// Media query breakpoints
+$mobile-breakpoint: 768px;
+$tablet-breakpoint: 1024px;
+$desktop-breakpoint: 1200px;

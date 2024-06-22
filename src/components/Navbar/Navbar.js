@@ -1,5 +1,3 @@
-// Navbar.jsx
-
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "../../axios.js";
@@ -9,7 +7,7 @@ import RegisterForm from "../RegisterForm/RegisterForm.js";
 import "./Navbar.scss";
 
 const Navbar = () => {
-  const [showLoginForm, setShowLoginForm] = useState(false);
+  const [showLoginForm, setShowLoginForm] = useState(true);
   const [showRegisterForm, setShowRegisterForm] = useState(false);
   const [searchInput, setSearchInput] = useState("");
   const [searchResults, setSearchResults] = useState([]);
@@ -75,14 +73,17 @@ const Navbar = () => {
           )}
         </li>
         <li>
-          <button onClick={handleLoginToggle}>Log In</button>
-        </li>
-        <li>
-          <button onClick={handleRegisterToggle}>Register</button>
+          {showLoginForm && <button onClick={handleLoginToggle}>Log In</button>}
+          {showRegisterForm && <RegisterForm />}
+          {!showLoginForm && (
+            <span>
+              Not registered?{" "}
+              <button onClick={handleRegisterToggle}>Register</button>
+            </span>
+          )}
         </li>
       </ul>
       {showLoginForm && <LoginForm />}
-      {showRegisterForm && <RegisterForm />}
     </div>
   );
 };
