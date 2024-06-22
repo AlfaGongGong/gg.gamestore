@@ -34,7 +34,7 @@ function App() {
           }
         />
         <Route path="/games" element={<GamesList />} />
-        <Route path="/games/:id" element={<GameDetails />} />
+        <Route path="/game/:id" element={<GameDetails />} />
         <Route path="/error" element={<Error />} />
         <Route path="*" element={<Error />} />
       </Routes>

@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+
 import Navbar from "../components/Navbar/Navbar.js";
 import ProductSlider from "../components/ProductSlider/ProductSlider.js";
 import ProductCard from "../components/ProductCard/ProductCard.js";
@@ -6,6 +8,8 @@ import axios from "../axios.js";
 import "./Homepage.scss";
 
 function HomePage() {
+  const { id } = useParams();
+
   const [bestRatedGames, setBestRatedGames] = useState([]);
   const [newGames, setNewGames] = useState([]);
   const [gamingAccessories, setGamingAccessories] = useState([]);

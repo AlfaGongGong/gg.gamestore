@@ -2,9 +2,11 @@ import React, { useState, useEffect } from "react";
 import Axios from "axios";
 import config from "../../config.json";
 import "./ProductSlider.scss";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 const ProductSlider = () => {
+  const { id } = useParams();
+
   const [items, setItems] = useState([]);
   const [activeSlide, setActiveSlide] = useState(null);
   const { RAWG_API_URL, RAWG_API_KEY } = config;
@@ -29,7 +31,7 @@ const ProductSlider = () => {
     } else {
       fetchData();
     }
-  }, []);
+  }, [id]);
 
   const toggleActiveSlide = (index) => {
     setActiveSlide(index);
@@ -75,13 +77,16 @@ const ProductSlider = () => {
               <div className="slide-overlay">
                 <h3>
                   {item.name} <br />
-                  <Link
-                    to={`/game/${item.id}`}
-                    element="button"
-                    className="view-details-btn"
-                    style={{ textDecoration: "none" }}
-                  >
-                    View Details
+                  <Link to={`/game/${item.id}`}>
+                    <h3>
+                      {item.name} <br />
+                      <button
+                        className="view-details-btn"
+                        style={{ textDecoration: "none" }}
+                      >
+                        View Details
+                      </button>
+                    </h3>
                   </Link>
                 </h3>
               </div>
