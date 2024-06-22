@@ -1,59 +1,81 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import RegisterForm from "../RegisterForm/RegisterForm.js";
 
-import axios from "../../axios.js";
 import "./LoginForm.scss";
 
-const handleLogin = async (username, password) => {
-  try {
-    const response = await axios.post("/auth/login", { username, password });
+import axios from "../../axios.js";
 
-    console.log("Logged in successfully:", response.data);
+const LoginForm = () => {
+  const [showLoginForm, setShowLoginForm] = useState(true);
+  const toggleForm = () => {
+    setShowLoginForm(!showLoginForm);
+  };
 
-    localStorage.setItem("token", response.data.token);
+  const handleLoginToggle = () => {
+    toggleForm();
+  };
 
-    <Link to="/home" />;
-  } catch (error) {
-    console.error("Error logging in:", error);
+  const handleLogin = async (event) => {
+    event.preventDefault();
+    const username = document.getElementById("login-username").value;
+    const password = document.getElementById("login-password").value;
 
-    const errorMessage = document.createElement("p");
-    errorMessage.textContent = "Invalid credentials. Please try again.";
-    errorMessage.style.color = "red";
-    document.getElementById("login-form").appendChild(errorMessage);
-  }
+    try {
+      const response = await axios.post("/auth/login", { username, password });
+
+      console.log("Logged in successfully:", response.data);
+
+      localStorage.setItem("token", response.data.token);
+
+      window.location.href = "/home";
+    } catch (error) {
+      console.error("Error logging in:", error);
+
+      const errorMessage = document.createElement("p");
+      errorMessage.textContent = "Invalid credentials. Please try again.";
+      errorMessage.style.color = "red";
+      document.getElementById("login-form").appendChild(errorMessage);
+    }
+  };
+
+  return (
+    <div>
+      {showLoginForm ? (
+        <form
+          id="login-form"
+          className="dropdown-item"
+          method="POST"
+          onSubmit={handleLogin}
+        >
+          <input
+            type="text"
+            placeholder="Username"
+            id="login-username"
+            name="username"
+            required
+          />
+          <input
+            type="password"
+            placeholder="Password"
+            id="login-password"
+            name="password"
+            required
+          />
+          <button type="submit" className="btn cta-btn" id="login-btn">
+            Login
+          </button>
+          <label>
+            Don't have an account?{" "}
+            <a href="#" onClick={handleLoginToggle}>
+              Register
+            </a>
+          </label>
+        </form>
+      ) : (
+        <RegisterForm />
+      )}
+    </div>
+  );
 };
-
-const LoginForm = () => (
-  <form
-    id="login-form"
-    className="dropdown-item"
-    method="POST"
-    onSubmit={(event) => {
-      event.preventDefault();
-      const username = document.getElementById("login-username").value;
-      const password = document.getElementById("login-password").value;
-      handleLogin(username, password);
-    }}
-  >
-    <h2>Log in</h2>
-    <input
-      type="text"
-      placeholder="Username"
-      id="login-username"
-      name="username"
-      required
-    />
-    <input
-      type="password"
-      placeholder="Password"
-      id="login-password"
-      name="password"
-      required
-    />
-    <button type="submit" className="btn cta-btn" id="login-btn">
-      Login
-    </button>
-  </form>
-);
 
 export default LoginForm;

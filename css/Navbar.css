@@ -3,54 +3,20 @@
   color: #fff;
   padding: 10px;
 }
-
 .navbar ul {
   list-style-type: none;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
-
-.navbar li {
+.navbar ul li {
   margin-right: 20px;
-}
-
-.navbar .search-container {
   position: relative;
 }
-
-.navbar input {
-  padding: 5px;
-  margin-right: 10px;
-  border: 1px solid #ff4500;
+.navbar ul li .dropdown-container {
+  position: relative;
 }
-
-.navbar .search-results {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background-color: #fff;
-  border: 1px solid #ccc;
-  padding: 10px;
-}
-
-.navbar .search-item {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  margin-top: 10px;
-}
-
-.navbar img {
-  width: 50px;
-  height: 50px;
-  margin-right: 10px;
-}
-
-.navbar button {
+.navbar ul li .dropdown-container button {
   background-color: #ff4500;
   color: #fff;
   border: none;
@@ -59,29 +25,142 @@
   -webkit-transition: background-color 0.3s;
   transition: background-color 0.3s;
 }
-.navbar button:hover {
+.navbar ul li .dropdown-container button:hover {
+  background-color: #d13800;
+}
+.navbar ul li .dropdown-container .dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #000;
+  color: #fff;
+  padding: 10px;
+  display: none;
+}
+.navbar ul li .dropdown-container .dropdown.login-form {
+  display: block;
+}
+.navbar ul li .dropdown-container .dropdown.register-form {
+  display: block;
+}
+.navbar ul li .dropdown-container .dropdown.show {
+  display: block;
+}
+
+.search-input {
+  width: 100%;
+  position: relative;
+  margin-right: 10px;
+  padding: 5px;
+  border: 1px solid #ff4500;
+  border-radius: 5px;
+  color: #666;
+}
+.search-input:hover {
+  border-color: #d13800;
+}
+.search-input:focus-within {
+  border-color: #d13800;
+}
+.search-input input {
+  border: none;
+  outline: none;
+  padding: 5px;
+}
+.search-input::-webkit-input-placeholder {
+  color: #666;
+}
+.search-input::-moz-placeholder {
+  color: #666;
+}
+.search-input:-ms-input-placeholder {
+  color: #666;
+}
+.search-input::-ms-input-placeholder {
+  color: #666;
+}
+.search-input::placeholder {
+  color: #666;
+}
+.search-input:focus {
+  outline: none;
+}
+
+.search-button {
+  background-color: #ff4500;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  -webkit-transition: background-color 0.3s;
+  transition: background-color 0.3s;
+}
+.search-button:hover {
+  background-color: #d13800;
+}
+.search-button .search-icon {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+.search-button .close-icon {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+.search-button input {
+  padding: 5px;
+  border: 1px solid #ff4500;
+  border-radius: 5px;
+}
+
+.search-results {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #000;
+  color: #fff;
+  padding: 10px;
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+.hide {
+  display: none;
+}
+
+.search-results a {
+  color: #fff;
+  text-decoration: none;
+  display: block;
+  padding: 5px 0;
+  -webkit-transition: background-color 0.3s;
+  transition: background-color 0.3s;
+}
+.search-results a:hover {
+  background-color: #ff4500;
+}
+
+.search-results a.active {
+  background-color: #ff4500;
+}
+
+.search-results a.active:hover {
   background-color: #d13800;
 }
 
-@media (max-width: 768px) {
-  .navbar {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-  }
-  .navbar ul {
-    margin-top: 10px;
-  }
-  .navbar li {
-    margin-right: 0;
-  }
+.search-results a:last-child {
+  border-bottom: none;
 }
-@media (max-width: 480px) {
-  .navbar {
-    padding: 5px;
-  }
-  .navbar input {
-    padding: 3px;
-  }
+
+.search-results a:first-child {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
 }

@@ -7,9 +7,7 @@ import AdminPage from "./pages/AdminPage.js";
 import UserProfile from "./pages/UserProfile.js";
 import GamesList from "./pages/GamesList.js";
 import GameDetails from "./pages/GameDetails.js";
-import Error401 from "./pages/errors/Error401.js";
-import Error403 from "./pages/errors/Error403.js";
-import Error404 from "./pages/errors/Error404.js";
+import Error from "./pages/Error.js";
 
 import "./App.scss";
 
@@ -21,18 +19,24 @@ function App() {
         <Route path="/home" element={<HomePage />} />
         <Route
           path="/admin"
-          element={<ProtectedAuth roles={["admin"]} element={<AdminPage />} />}
+          element={
+            <ProtectedAuth roles={["admin"]}>
+              <AdminPage />
+            </ProtectedAuth>
+          }
         />
         <Route
           path="/profile"
-          element={<ProtectedAuth element={<UserProfile />} />}
+          element={
+            <ProtectedAuth>
+              <UserProfile />
+            </ProtectedAuth>
+          }
         />
         <Route path="/games" element={<GamesList />} />
         <Route path="/games/:id" element={<GameDetails />} />
-        <Route path="/401" element={<Error401 />} />
-        <Route path="/403" element={<Error403 />} />
-        <Route path="/404" element={<Error404 />} />
-        <Route path="*" element={<Error404 />} />
+        <Route path="/error" element={<Error />} />
+        <Route path="*" element={<Error />} />
       </Routes>
     </BrowserRouter>
   );

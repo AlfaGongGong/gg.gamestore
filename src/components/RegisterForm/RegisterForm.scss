@@ -44,3 +44,37 @@
     }
   }
 }
+
+#error-message {
+  color: $primary-color;
+  margin-top: $product-details-margin-top;
+}
+
+#success-message {
+  color: $secondary-color;
+  margin-top: $product-details-margin-top;
+}
+
+.login-link {
+  color: $link-color;
+  text-decoration: none;
+
+  &:hover {
+    color: $link-hover-color;
+  }
+}
+
+.login-form-footer {
+  margin-top: $product-details-margin-top;
+  font-size: 0.8rem;
+  color: $text-color;
+}
+
+.login-form-footer a {
+  color: $link-color;
+  text-decoration: none;
+
+  &:hover {
+    color: $link-hover-color;
+  }
+}

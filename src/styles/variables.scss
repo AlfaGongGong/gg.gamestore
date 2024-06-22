@@ -51,6 +51,10 @@ $search-results-hover-color: $accent-color;
 
 $error-color: red;
 
+// Page styles
+$page-padding: 20px;
+
+
 // Footer styles
 $footer-bg-color: $background-color;
 $footer-text-color: #fff;
@@ -61,6 +65,9 @@ $product-card-border: 1px solid #ccc;
 $product-card-border-radius: 4px;
 $product-card-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 $price-font-size: 1.2rem;
+$product-card-min-width: 300px;
+$product-grid-gap: 20px;
+
 // Product image styles
 $product-image-margin-right: 20px;
 $product-image-border-radius: 4px;
@@ -81,9 +88,6 @@ $cart-item-border: 1px solid #ccc;
 $cart-item-border-radius: 4px;
 $cart-item-padding: 10px;
 
-
-
 // Media query breakpoints
 $mobile-breakpoint: 768px;
 $tablet-breakpoint: 1024px;
-$desktop-breakpoint: 1200px;

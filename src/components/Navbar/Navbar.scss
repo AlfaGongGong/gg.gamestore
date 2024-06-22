@@ -1,53 +1,94 @@
 @import "../../styles/variables.scss";
 
 .navbar {
-  background-color: $background-color;
-  color: #fff;
+  background-color: $navbar-bg-color;
+  color: $navbar-text-color;
   padding: 10px;
+
+  ul {
+    list-style-type: none;
+    display: flex;
+
+    li {
+      margin-right: 20px;
+      position: relative;
+
+      .dropdown-container {
+        position: relative;
+
+        button {
+          background-color: $primary-color;
+          color: #fff;
+          border: none;
+          padding: 5px 10px;
+          cursor: pointer;
+          transition: background-color 0.3s;
+
+          &:hover {
+            background-color: $secondary-color;
+          }
+        }
+
+        .dropdown {
+          position: absolute;
+          top: 100%;
+          left: 0;
+          background-color: $background-color;
+          color: #fff;
+          padding: 10px;
+          display: none;
+
+          &.login-form {
+            display: block;
+          }
+
+          &.register-form {
+            display: block;
+          }
+
+          &.show {
+            display: block;
+          }
+        }
+      }
+    }
+  }
 }
 
-.navbar ul {
-  list-style-type: none;
-  display: flex;
-}
-
-.navbar li {
-  margin-right: 20px;
-}
-
-.navbar .search-container {
+.search-input {
+  width: 100%;
   position: relative;
-}
-
-.navbar input {
+  margin-right: 10px;
   padding: 5px;
-  margin-right: 10px;
   border: 1px solid $primary-color;
+  border-radius: 5px;
+  color: $text-color;
+
+  &:hover {
+    border-color: $secondary-color;
+  }
+
+  &:focus-within {
+    border-color: $secondary-color;
+  }
+
+  input {
+    border: none;
+    outline: none;
+    padding: 5px;
+  }
+
+
+  &::placeholder {
+    color: $text-color;
+  }
+
+  &:focus {
+    outline: none;
+  }
 }
 
-.navbar .search-results {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background-color: #fff;
-  border: 1px solid #ccc;
-  padding: 10px;
-}
-
-.navbar .search-item {
-  display: flex;
-  align-items: center;
-  margin-top: 10px;
-}
-
-.navbar img {
-  width: 50px;
-  height: 50px;
-  margin-right: 10px;
-}
-
-// Dodavanje animacije na dugme prilikom hover-a
-.navbar button {
+.search-button {
   background-color: $primary-color;
   color: #fff;
   border: none;
@@ -58,28 +99,74 @@
   &:hover {
     background-color: $secondary-color;
   }
-}
 
-@media (max-width: 768px) {
-  .navbar {
-    flex-direction: column;
+  .search-icon {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
   }
 
-  .navbar ul {
-    margin-top: 10px;
+  .close-icon {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
   }
 
-  .navbar li {
-    margin-right: 0;
-  }
-}
 
-@media (max-width: 480px) {
-  .navbar {
+  input {
     padding: 5px;
+    border: 1px solid $primary-color;
+    border-radius: 5px;
   }
 
-  .navbar input {
-    padding: 3px;
+
+}
+
+.search-results {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: $background-color;
+  color: #fff;
+  padding: 10px;
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+.hide {
+  display: none;
+}
+
+.search-results a {
+  color: #fff;
+  text-decoration: none;
+  display: block;
+  padding: 5px 0;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: $primary-color;
   }
+}
+
+.search-results a.active {
+  background-color: $primary-color;
+}
+
+.search-results a.active:hover {
+  background-color: $secondary-color;
+}
+
+.search-results a:last-child {
+  border-bottom: none;
+}
+
+.search-results a:first-child {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
 }

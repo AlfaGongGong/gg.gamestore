@@ -1,21 +1,23 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
-import styles from "./ProductSlider.scss";
+import Axios from "axios";
+import config from "../../config.json";
+import "./ProductSlider.scss";
+import { Link } from "react-router-dom";
 
 const ProductSlider = () => {
   const [items, setItems] = useState([]);
+  const [activeSlide, setActiveSlide] = useState(null);
+  const { RAWG_API_URL, RAWG_API_KEY } = config;
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(
-          `${process.env.REACT_APP_RAWG_API_URL}/games?key=${process.env.REACT_APP_RAWG_API_KEY}`
+        const response = await Axios.get(
+          `${RAWG_API_URL}/games?key=${RAWG_API_KEY}&ordering=rating`
         );
-        setItems(response.data.results.slice(0, 5));
-        localStorage.setItem(
-          "items",
-          JSON.stringify(response.data.results.slice(0, 5))
-        );
+        const topItems = response.data.results.slice(0, 5);
+        setItems(topItems);
+        localStorage.setItem("items", JSON.stringify(topItems));
       } catch (error) {
         console.error(error);
       }
@@ -29,45 +31,67 @@ const ProductSlider = () => {
     }
   }, []);
 
-  useEffect(() => {
-    const sliderPlugin = (activeSlide = 0) => {
-      const slides = document.querySelectorAll(`.${styles.slide}`);
-      let currentSlideIndex = activeSlide;
+  const toggleActiveSlide = (index) => {
+    setActiveSlide(index);
+  };
 
-      slides[currentSlideIndex]?.classList.add(styles.active);
+  const handleMouseEnter = (index) => {
+    const slide = document.querySelector(`[data-id="${items[index].id}"]`);
+    const tooltip = document.createElement("div");
+    tooltip.classList.add("tooltip");
+    tooltip.innerText = "Click to expand";
+    slide.appendChild(tooltip);
+  };
 
-      function toggleActiveSlide() {
-        clearActiveClasses();
-        this.classList.add(styles.active);
-      }
+  const handleMouseLeave = () => {
+    const tooltip = document.querySelector(".tooltip");
+    if (tooltip) {
+      tooltip.remove();
+    }
+  };
 
-      function clearActiveClasses() {
-        slides.forEach((slide) => {
-          slide.classList.remove(styles.active);
-        });
-      }
+  const viewDetails = (id) => {
+    window.location.href = `/game/${id}`;
+  };
 
-      slides.forEach((slide) => {
-        slide.addEventListener("click", toggleActiveSlide);
-      });
-    };
-    sliderPlugin();
-  });
+  if (!items) {
+    window.location.href = `/error`;
+  }
 
-  return items.length > 0 ? (
-    <div className={styles.sliderContainer}>
-      {items.map((item) => (
-        <div
-          className={styles.slide}
-          key={item.id}
-          style={{ backgroundImage: `url(${item.background_image})` }}
-        >
-          <h3>{item.name}</h3>
+  return (
+    <div className="product-slider">
+      {items.length > 0 ? (
+        <div className="slider-container">
+          {items.map((item, index) => (
+            <div
+              className={`slide ${activeSlide === index ? "active" : ""}`}
+              key={item.id}
+              data-id={item.id}
+              style={{ backgroundImage: `url(${item.background_image})` }}
+              onClick={() => toggleActiveSlide(index)}
+              onMouseEnter={() => handleMouseEnter(index)}
+              onMouseLeave={handleMouseLeave}
+            >
+              <div className="slide-overlay">
+                <h3>
+                  {item.name} <br />
+                  <Link
+                    to={`/game/${item.id}`}
+                    element="button"
+                    className="view-details-btn"
+                    style={{ textDecoration: "none" }}
+                  >
+                    View Details
+                  </Link>
+                </h3>
+              </div>
+            </div>
+          ))}
         </div>
-      ))}
+      ) : (
+        <p>Loading...</p>
+      )}
     </div>
-  ) : (
-    <p>Loading...</p>
   );
 };
 
