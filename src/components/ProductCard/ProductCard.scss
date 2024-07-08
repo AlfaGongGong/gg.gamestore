@@ -2,14 +2,15 @@
 
 .product-card {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: space-between;
   padding: $product-card-padding;
   border: $product-card-border;
   border-radius: $product-card-border-radius;
   box-shadow: $product-card-box-shadow;
-  background-color: $background-color;
-  color: $text-color;
+  background-color: $background-color-opaque;
+  color: $primary-color;
   font-family: $body-font;
   transition: box-shadow 0.3s;
 
@@ -19,7 +20,8 @@
 
   .product-image {
     flex: 1;
-    margin-right: $product-image-margin-right;
+    width: 100%;
+
 
     img {
       max-width: 100%;

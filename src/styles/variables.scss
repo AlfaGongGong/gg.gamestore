@@ -3,17 +3,18 @@ $primary-color: #ff4500;
 $secondary-color: #d13800;
 $text-color: #666;
 $background-color: #000;
+$background-color-opaque: rgba(0, 0, 0, 0.4);
 $accent-color: #ffd700;
 $mainColor: $primary-color;
 
 // Font styles
 $heading-font: 'Roboto', sans-serif;
 $body-font: 'Open Sans', sans-serif;
-$base-font-size: 16px;
+$base-font-size: 1rem;
 $main: $body-font;
 
 // Heading styles
-$heading-font-size: 2.5rem;
+$heading-font-size: 1.3rem;
 $heading-line-height: 1.2;
 
 // Body styles
@@ -29,7 +30,7 @@ $link-hover-color: $secondary-color;
 $button-bg-color: $primary-color;
 $button-text-color: #fff;
 $button-hover-color: $secondary-color;
-$button-border-radius: 4px;
+$button-border-radius: 0.25rem;
 
 // Input styles
 $input-border-color: $primary-color;
@@ -59,21 +60,6 @@ $page-padding: 20px;
 $footer-bg-color: $background-color;
 $footer-text-color: #fff;
 
-// Product card styles
-$product-card-padding: 20px;
-$product-card-border: 1px solid #ccc;
-$product-card-border-radius: 4px;
-$product-card-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-$price-font-size: 1.2rem;
-$product-card-min-width: 300px;
-$product-grid-gap: 20px;
-
-// Product image styles
-$product-image-margin-right: 20px;
-$product-image-border-radius: 4px;
-
-// Product details styles
-$product-details-margin-top: 10px;
 
 // Product price styles
 $product-price-color: $primary-color;
@@ -83,10 +69,6 @@ $add-to-cart-btn-bg-color: $primary-color;
 $add-to-cart-btn-text-color: #fff;
 $add-to-cart-btn-hover-color: $secondary-color;
 
-// Cart item styles
-$cart-item-border: 1px solid #ccc;
-$cart-item-border-radius: 4px;
-$cart-item-padding: 10px;
 
 // Media query breakpoints
 $mobile-breakpoint: 768px;
