@@ -12,7 +12,7 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.7.2",
-    "express": "^4.19.2",
+    "express": "^4.21.1",
     "helmet": "^7.1.0",
     "jsonwebtoken": "^9.0.2",
     "react": "^18.3.1",
@@ -21,7 +21,7 @@
     "react-scripts": "5.0.1",
     "redux": "^5.0.1",
     "sass": "^1.77.4",
-    "universal-cookie": "^7.1.4",
+    "universal-cookie": "^7.2.1",
     "web-vitals": "^2.1.4"
   },
   "devDependencies": {
